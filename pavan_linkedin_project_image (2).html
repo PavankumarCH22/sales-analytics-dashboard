@@ -1,0 +1,139 @@
+
+<h2 class="sr-only">LinkedIn project banner for Pavan Kumar Chakali showing Sales Analytics Dashboard with charts</h2>
+
+<div style="background: #0a2540; border-radius: var(--border-radius-lg); padding: 2rem; width: 100%; box-sizing: border-box;">
+
+  <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+    <div>
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 6px; letter-spacing: 0.08em; font-weight: 500;">PYTHON · PANDAS · MATPLOTLIB</p>
+      <p style="font-size: 22px; font-weight: 500; color: #ffffff; margin: 0 0 6px;">Sales Analytics Dashboard</p>
+      <p style="font-size: 13px; color: #a8c8e0; margin: 0;">Pavan Kumar Chakali &nbsp;·&nbsp; CSE (AI) &nbsp;·&nbsp; Parul Institute of Engg. & Tech.</p>
+    </div>
+    <div style="background: #1d9e75; border-radius: var(--border-radius-md); padding: 5px 14px;">
+      <span style="font-size: 12px; color: #e1f5ee; font-weight: 500;">AI / Data project</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 1.5rem;">
+    <div style="background: #0e2f4f; border-radius: var(--border-radius-md); padding: 12px;">
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 4px;">Total revenue</p>
+      <p style="font-size: 20px; font-weight: 500; color: #fff; margin: 0;">$847K</p>
+      <p style="font-size: 11px; color: #1d9e75; margin: 4px 0 0;">+12% growth</p>
+    </div>
+    <div style="background: #0e2f4f; border-radius: var(--border-radius-md); padding: 12px;">
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 4px;">Orders</p>
+      <p style="font-size: 20px; font-weight: 500; color: #fff; margin: 0;">3,241</p>
+      <p style="font-size: 11px; color: #1d9e75; margin: 4px 0 0;">+8% growth</p>
+    </div>
+    <div style="background: #0e2f4f; border-radius: var(--border-radius-md); padding: 12px;">
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 4px;">Charts generated</p>
+      <p style="font-size: 20px; font-weight: 500; color: #fff; margin: 0;">3 PNG</p>
+      <p style="font-size: 11px; color: #7fb3d3; margin: 4px 0 0;">auto-saved</p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px;">
+
+    <div style="background: #0e2f4f; border-radius: var(--border-radius-md); padding: 14px;">
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 10px; font-weight: 500;">Monthly sales trend</p>
+      <div style="position: relative; height: 140px;">
+        <canvas id="trendC" role="img" aria-label="Monthly sales trend line chart">Sales growing from 48K in Jan to 98K in Dec.</canvas>
+      </div>
+    </div>
+
+    <div style="background: #0e2f4f; border-radius: var(--border-radius-md); padding: 14px;">
+      <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 10px; font-weight: 500;">Category split</p>
+      <div style="position: relative; height: 140px;">
+        <canvas id="pieC" role="img" aria-label="Category distribution pie chart">Electronics 38%, Accessories 27%, Software 20%, Other 15%.</canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 12px; background: #0e2f4f; border-radius: var(--border-radius-md); padding: 14px;">
+    <p style="font-size: 11px; color: #7fb3d3; margin: 0 0 10px; font-weight: 500;">Top products by revenue</p>
+    <div style="position: relative; height: 100px;">
+      <canvas id="barC" role="img" aria-label="Top products horizontal bar chart">Widget Pro leads at $94K.</canvas>
+    </div>
+  </div>
+
+  <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 8px;">
+    <span style="font-size: 11px; background: #193d5c; color: #85b7eb; padding: 4px 10px; border-radius: 20px;">pandas</span>
+    <span style="font-size: 11px; background: #193d5c; color: #85b7eb; padding: 4px 10px; border-radius: 20px;">matplotlib</span>
+    <span style="font-size: 11px; background: #193d5c; color: #85b7eb; padding: 4px 10px; border-radius: 20px;">data wrangling</span>
+    <span style="font-size: 11px; background: #193d5c; color: #85b7eb; padding: 4px 10px; border-radius: 20px;">automated reporting</span>
+    <span style="font-size: 11px; background: #193d5c; color: #85b7eb; padding: 4px 10px; border-radius: 20px;">CSV pipeline</span>
+    <span style="font-size: 11px; background: #0f6e56; color: #9fe1cb; padding: 4px 10px; border-radius: 20px;">AI/CSE student project</span>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const sales = [48,55,61,53,70,76,68,82,79,88,92,98];
+
+new Chart(document.getElementById('trendC'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [{
+      data: sales,
+      borderColor: '#5DCAA5',
+      backgroundColor: 'rgba(93,202,165,0.12)',
+      borderWidth: 2,
+      pointRadius: 2,
+      pointBackgroundColor: '#5DCAA5',
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#7fb3d3', font: { size: 10 }, autoSkip: true, maxTicksLimit: 6 } },
+      y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#7fb3d3', font: { size: 10 }, callback: v => '$'+v+'K' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('pieC'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Electronics','Accessories','Software','Other'],
+    datasets: [{
+      data: [38,27,20,15],
+      backgroundColor: ['#378ADD','#1D9E75','#EF9F27','#888780'],
+      borderWidth: 2,
+      borderColor: '#0e2f4f'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    cutout: '60%'
+  }
+});
+
+new Chart(document.getElementById('barC'), {
+  type: 'bar',
+  data: {
+    labels: ['Widget Pro','Gadget X','Smart Hub','Alpha Kit','PowerPack'],
+    datasets: [{
+      data: [94,82,74,67,61],
+      backgroundColor: ['#378ADD','rgba(55,138,221,0.5)','rgba(55,138,221,0.5)','rgba(55,138,221,0.5)','rgba(55,138,221,0.5)'],
+      borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#7fb3d3', font: { size: 10 }, callback: v => '$'+v+'K' } },
+      y: { grid: { display: false }, ticks: { color: '#7fb3d3', font: { size: 10 } } }
+    }
+  }
+});
+</script>
